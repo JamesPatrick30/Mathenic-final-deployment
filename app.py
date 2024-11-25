@@ -205,7 +205,9 @@ def handle_message(data):
 def alldata():
     return rooms
 
-
+@socketio.on('connection')
+def handle_score_update(data):
+     emit('connection','connected to backend',to = request.sid) 
 
 if __name__ == '__main__':
     socketio.run(app, debug=True,port=2000)
