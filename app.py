@@ -209,5 +209,11 @@ def alldata():
 def handle_score_update(data):
      emit('connection','connected to backend',to = request.sid) 
 
+@app.after_request
+def add_header(response):
+    response.cache_control.no_cache = True
+    return response
+
+
 if __name__ == '__main__':
     socketio.run(app, debug=True,port=2000)
