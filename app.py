@@ -216,4 +216,4 @@ def add_header(response):
 
 
 if __name__ == '__main__':
-    socketio.run(app, debug=True,port=2000)
+    socketio.run(app, debug=True)
